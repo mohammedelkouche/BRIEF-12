@@ -1,9 +1,9 @@
 <?php
     include 'connect.php' ;
     if (isset($_POST["submit"])){
-        if(empty($SerialNumber)|| empty($lastname) || empty($FirstName) || empty($DateofBirth) || empty($Department) ||empty($Salary) || empty($Job) || empty($Photo)){
-            $message[] = 'please fill out all' ;
-        }else{
+        // if(empty($SerialNumber)|| empty($lastname) || empty($FirstName) || empty($DateofBirth) || empty($Department) ||empty($Salary) || empty($Job) || empty($Photo)){
+        //     $message[] = 'please fill out all' ;
+        // }else{
             $SerialNumber = $_POST['SerialNumber'];
             $lastname = $_POST['lastname'];
             $FirstName = $_POST['FirstName'];
@@ -13,8 +13,14 @@
             $Job = $_POST['Job'];
             $Photo = $_POST['Photo'];
             $folderPhoto = 'image/'.$Photo ;
-            
-        }
+            $insertdata = "INSERT INTO employee (SerialNumber,lastname,FirstName,DateofBirth,Department,Salary,Job,Photo ) 
+                            VALUES ('$SerialNumber','$lastname','$FirstName','$DateofBirth','$Department','$Salary','$Job','$Photo')" ;
+            if($conn->query($insertdata) === TRUE){
+                echo "Record Inserted Succefully" ;
+            }else{
+                echo "Unable to Inserdt Data" ;
+            }
+        // }
         
 
     }
@@ -29,11 +35,11 @@
 </head>
 <body>
     <?php
-        if(isset($message)){
-            foreach($message as $message){
-                echo'<span>'.$message.'</span>';
-            }
-        }
+        // if(isset($message)){
+        //     foreach($message as $message){
+        //         echo'<span>'.$message.'</span>';
+        //     }
+        // }
     ?>
     <!-- <form action="<?php //$_SERVER['PHP_SELF']?>" method = "POST"> -->
     <form action="insert.php" method = "POST">

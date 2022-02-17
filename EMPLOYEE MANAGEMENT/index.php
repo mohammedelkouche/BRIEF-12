@@ -1,5 +1,9 @@
  <?php
     include 'connect.php';
+    // $sql = "SELECT SerialNumber, lastname, FirstName ,DateofBirth, Department,Salary,Job,Photo FROM employee";
+    $sql = "SELECT * FROM employee" ;
+    $result = $conn->query($sql);
+    $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +30,18 @@
                     </tr>";
                 // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<tr><td>".$row["SerialNumber"]."</td><td>".$row["lastname"]."</td><td>".$row["FirstName"]."</td><td>".$row["DateofBirth"]."</td><td>".$row["Department"]."</td><td>".$row["Salary"]."</td><td>".$row["Job"]."</td><td>".$row["Photo"]."</td></tr>";
+                echo "<tr>
+                        <td>".$row["SerialNumber"]."</td>
+                        <td>".$row["lastname"]."</td>
+                        <td>".$row["FirstName"]."</td>
+                        <td>".$row["DateofBirth"]."</td>
+                        <td>".$row["Department"]."</td>
+                        <td>".$row["Salary"]."</td>
+                        <td>".$row["Job"]."</td>
+                        <td>".$row["Photo"]."</td>
+                        <td>"."<a href= 'edite.php?edit= echo "$row['SerialNumber'] "  ' > EDIT </a>
+                              <a href= 'delet.php?delet= echo "$row['SerialNumber']"  ' > DELETE </a>"."</td>
+                    </tr>";
             }
             echo "</table>";
         }else{
