@@ -1,19 +1,11 @@
 <?php
     include 'connect.php' ; 
-    $update = $_GET['update'] ;
-    $query = "SELECT * FROM employee WHERE SerialNumber = '$update'" ;
-    $result = $conn->query($query) ;
-    while($row = $result->fetch_assoc()){
-        $SerialNumber = $_POST['SerialNumber'];
-        $lastname = $_POST['lastname'];
-        $FirstName = $_POST['FirstName'];
-        $DateofBirth = $_POST['DateofBirth'];
-        $Department = $_POST['Department'];
-        $Salary = $_POST['Salary'];
-        $Job = $_POST['Job'];
-        $Photo = $_POST['Photo'];
-        $folderPhoto = 'image/'.$Photo ; 
-    } 
+    $update = $_GET['edit'] ;
+        // select row where i click
+        $query = "SELECT * FROM employee WHERE SerialNumber = '$update' " ;
+        $result = $conn->query($query) ;
+
+        while($row = $result->fetch_assoc()){     
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,51 +16,46 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        // if(isset($message)){
-        //     foreach($message as $message){
-        //         echo'<span>'.$message.'</span>';
-        //     }
-        // }
-    ?>
-    <!-- <form action="<?php //$_SERVER['PHP_SELF']?>" method = "POST"> -->
-    <form action="update.php" method = "POST">
+    <form action="update.php?ID=<?php echo $row['SerialNumber'] ?>" method = "POST">
         <fieldset>
             <span>SerialNumber</span>
             <br>
-            <input type="text" name = "SerialNumber" placeholder = "SerialNumber" value="<?php echo $SerialNumber ?> ">
+            <input type="text" name = "SerialNumber" placeholder = "SerialNumber" value="<?php echo $row['SerialNumber'] ?> ">
             <br>
             <span>lastname</span>
             <br>
-            <input type="text" name = "lastname" placeholder = "lastname" value="<?php echo $lastname ?> ">
+            <input type="text" name = "lastname" placeholder = "lastname" value="<?php echo $row['lastname'] ?> ">
             <br>
             <span>First Name</span>
             <br>
-            <input type="text" name = "FirstName" placeholder = "First Name" value="<?php echo $FirstName ?> ">
+            <input type="text" name = "FirstName" placeholder = "First Name" value="<?php echo $row['FirstName'] ?> ">
             <br>
             <span>Date of Birth</span>
             <br>
-            <input type="date" name = "DateofBirth" placeholder = "Date of Birth" value="<?php echo $DateofBirth ?> ">
+            <input type="date" name = "DateofBirth" placeholder = "Date of Birth" value="<?php echo $row['DateofBirth'] ?> ">
             <br>
             <span>Department</span>
             <br>
-            <input type="text" name = "Department" placeholder = "Department" value="<?php echo $Department ?> ">
+            <input type="text" name = "Department" placeholder = "Department" value="<?php echo $row['Department'] ?> ">
             <br>
             <span>Salary</span>
             <br>
-            <input type="text" name = "Salary" placeholder = "Salary" value="<?php echo $Salary ?> ">
+            <input type="text" name = "Salary" placeholder = "Salary" value="<?php echo $row['Salary'] ?> ">
             <br>
             <span>Job</span>
             <br>
-            <input type="text" name = "Job" placeholder = "Job" value="<?php echo $Job ?> ">
+            <input type="text" name = "Job" placeholder = "Job" value="<?php echo $row['Job'] ?> ">
             <br>
             <span>Photo :</span>
             <br>
-            <input type="file" name = "Photo" placeholder = "Photo" value="<?php echo $Photo ?> ">
+            <input type="file" name = "Photo" placeholder = "Photo" value="<?php echo $row['Photo'] ?> ">
             <br>
             <br>
-            <input type="submit" name = "update" value = "Update"  >
+            <input type="submit" name = "Update" value = "UPDATE"  >
         </fieldset>    
-    </form>    
+    </form>   
+    <?php  }
+        // }
+        ;?> 
 </body>
 </html>

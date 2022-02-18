@@ -41,7 +41,6 @@
         //     }
         // }
     ?>
-    <!-- <form action="<?php //$_SERVER['PHP_SELF']?>" method = "POST"> -->
     <form action="insert.php" method = "POST">
         <fieldset>
             <span>SerialNumber</span>
