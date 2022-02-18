@@ -34,13 +34,13 @@
                         <td>".$row["SerialNumber"]."</td>
                         <td>".$row["lastname"]."</td>
                         <td>".$row["FirstName"]."</td>
-                        <td>".$row["DateofBirth"]."</td>
+                        <td>".$row["DateofBirth"]."</td> 
                         <td>".$row["Department"]."</td>
                         <td>".$row["Salary"]."</td>
                         <td>".$row["Job"]."</td>
                         <td>".$row["Photo"]."</td>
-                        <td>"."<a href= 'edite.php?edit= echo "$row['SerialNumber'] "  ' > EDIT </a>
-                              <a href= 'delet.php?delet= echo "$row['SerialNumber']"  ' > DELETE </a>"."</td>
+                        <td><a href= 'edite.php?update=".$row['SerialNumber']." ' > EDIT </a>
+                            <a href= 'delet.php?cancel=".$row['SerialNumber']." ' > DELETE </a>"."</td>
                     </tr>";
             }
             echo "</table>";
