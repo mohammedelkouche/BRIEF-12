@@ -1,8 +1,6 @@
 <?php
 include 'connect.php' ;
 $ID = $_GET['ID'] ;
-
-
 if(isset($_POST['Update'])){
     $SerialNumber =   $_POST['SerialNumber'];
     $lastname     =   $_POST['lastname'];
@@ -20,8 +18,7 @@ if(isset($_POST['Update'])){
         Department = '$Department' ,
         Salary = '$Salary' ,
         Job = '$Job' ,
-        Photo = '$Photo' ,
-        
+        Photo = '$Photo' 
         WHERE SerialNumber = $ID " ;
     $result = $conn->query($query);
     if($result){
