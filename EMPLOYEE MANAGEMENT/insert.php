@@ -1,5 +1,6 @@
 <?php
     include 'connect.php' ;
+
     if (isset($_POST["submit"])){
         // if(empty($SerialNumber)|| empty($lastname) || empty($FirstName) || empty($DateofBirth) || empty($Department) ||empty($Salary) || empty($Job) || empty($Photo)){
         //     $message[] = 'please fill out all' ;
@@ -31,9 +32,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+    <?php
+        include 'header.php' ;
+    ?>
     <?php
         // if(isset($message)){
         //     foreach($message as $message){
@@ -41,6 +49,7 @@
         //     }
         // }
     ?>
+    <div id="div-form">
     <form action="insert.php" method = "POST">
         <fieldset>
             <span>SerialNumber</span>
@@ -79,5 +88,8 @@
             <input type="submit" name = "submit" value = "register" >
         </fieldset>    
     </form>    
+
+    </div>
+    
 </body>
 </html>

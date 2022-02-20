@@ -4,7 +4,6 @@
         // select row where i click
         $query = "SELECT * FROM employee WHERE SerialNumber = '$update' " ;
         $result = $conn->query($query) ;
-
         while($row = $result->fetch_assoc()){     
 ?>
 <!DOCTYPE html>

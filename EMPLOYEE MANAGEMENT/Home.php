@@ -7,25 +7,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.php">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">EmployeeConnect</a>
-        </div>
-    </nav>
-    <section>
-        <div class="d-flex">
-            <div class="list-group list-group-flush my-3">
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active">Dashbord</a> -->
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Employee List</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Employee List</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Employee List</a>
+    <?php
+        include 'header.php' ;
+    ?>
+    <div class="d-flex">
+        <section id= "sidebare"  >
+            <div class="list-group list-group-flush my-3 "  >
+                <a href="#" class="nav-link h3 my-2">Side Nav</a>
+                <a href="index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Employee List</a>
+                <a href="insert.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Add Employees</a>
+                <a href="edite.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Edit Employees</a>
+                <a href="delet.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Delete Employees</a>
+                <a href="delet.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Search employee</a>
             </div>
-        </div>
-        
-    </section>
+        </section>
+        <section id="main">
+            <div >
+                <h2>More than a simple HR portal, <br>EmployeeConnect is the first entry point to your organisation</h2>
+                <p> EmployeeConnect provides a holistic approach to the management <br>of the onboarding  prepare employee statements</p>
+
+            </div>
+        </section> 
+    </div>
+        <!-- <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
+            <ul class="nav flex-column text-white w-100">
+                <a href="#" class="nav-link h3 my-2">
+                Side Nav
+                </a>
+                <li href="index.php" class="nav-link">
+                <span class="mx-2">Home</span>
+                </li>
+                <li href="#" class="nav-link">
+                <span class="mx-2">About</span>
+                </li>
+                <li href="#" class="nav-link">
+                <span class="mx-2">Contact</span>
+                </li>
+            
+            </ul> 
+        </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
