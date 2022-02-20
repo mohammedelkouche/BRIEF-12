@@ -6,8 +6,9 @@
         $conn->query($sql);
     }
     if($conn){
-        echo "<p>Record Deleted from Database</p>" ;
+        header("location:index.php") ;
     }else{
         echo "Failed to Delet Record from Database" ;
     }
+
 ?>

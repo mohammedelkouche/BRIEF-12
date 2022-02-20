@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <?php
+        include 'Bootstrap-css.php'
+    ?>
     <title>Document</title>
 </head>
 <body>
@@ -19,17 +18,14 @@
             <div class="list-group list-group-flush my-3 "  >
                 <a href="#" class="nav-link h3 my-2">Side Nav</a>
                 <a href="index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Employee List</a>
-                <a href="insert.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Add Employees</a>
-                <a href="edite.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Edit Employees</a>
-                <a href="delet.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Delete Employees</a>
-                <a href="delet.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Search employee</a>
-            </div>
+                <a href="insert.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Add Employee</a>
+                <a href="insert.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Search employee</a>
+            </div> 
         </section>
         <section id="main">
             <div >
                 <h2>More than a simple HR portal, <br>EmployeeConnect is the first entry point to your organisation</h2>
                 <p> EmployeeConnect provides a holistic approach to the management <br>of the onboarding  prepare employee statements</p>
-
             </div>
         </section> 
     </div>

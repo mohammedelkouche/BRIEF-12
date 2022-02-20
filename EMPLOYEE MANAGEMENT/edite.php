@@ -12,9 +12,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+        include 'Bootstrap-css.php'
+    ?>
     <title>Document</title>
 </head>
 <body>
+    <?php
+        include 'header.php' ;
+        echo"<div class='page-title'>
+                <h1>Edit Employee</h1> 
+            </div>" ;
+    ?>
     <form action="update.php?ID=<?php echo $row['SerialNumber'] ?>" method = "POST">
         <fieldset>
             <span>SerialNumber</span>
@@ -47,14 +56,14 @@
             <br>
             <span>Photo :</span>
             <br>
-            <input type="file" name = "Photo" placeholder = "Photo" value="<?php echo $row['Photo'] ?> ">
+            <input type="file" accept="image/png,image/jpeg,image/jpg," name = "Photo" placeholder = "Photo" value="<?php echo $row['Photo'] ?> ">
             <br>
             <br>
             <input type="submit" name = "Update" value = "UPDATE"  >
         </fieldset>    
     </form>   
-    <?php  }
-        // }
-        ;?> 
+    <?php  
+        };
+    ?> 
 </body>
 </html>

@@ -12,11 +12,13 @@
             $Department = $_POST['Department'];
             $Salary = $_POST['Salary'];
             $Job = $_POST['Job'];
-            $Photo = $_POST['Photo'];
-            $folderPhoto = 'image/'.$Photo ;
+            $Photo = $_FILES['Photo']['name'];
+            $Photo_tm_name = $_FILES["Photo"]["tmp_name"];
+            $Photo_tm_folder = 'image/'.$Photo;
             $insertdata = "INSERT INTO employee (SerialNumber,lastname,FirstName,DateofBirth,Department,Salary,Job,Photo ) 
                             VALUES ('$SerialNumber','$lastname','$FirstName','$DateofBirth','$Department','$Salary','$Job','$Photo')" ;
             if($conn->query($insertdata) === TRUE){
+                move_uploaded_file($Photo_tm_name) ;
                 echo "Record Inserted Succefully" ;
             }else{
                 echo "Unable to Inserdt Data" ;
@@ -32,15 +34,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <?php
+        include 'Bootstrap-css.php'
+    ?>
     <title>Document</title>
 </head>
-<body>
+<body id="body-form">
     <?php
         include 'header.php' ;
+        echo"<div class='page-title'>
+            <h1>Add Employee</h1> 
+        </div>" ;
     ?>
     <?php
         // if(isset($message)){
@@ -82,7 +86,7 @@
             <br>
             <span>Photo :</span>
             <br>
-            <input type="file" name = "Photo" placeholder = "Photo" >
+            <input type="file" accept="image/png,image/jpeg,image/jpg," name = "Photo" placeholder = "Photo" >
             <br>
             <br>
             <input type="submit" name = "submit" value = "register" >
@@ -90,6 +94,8 @@
     </form>    
 
     </div>
-    
+    <?php
+        include 'buttonhome.php' ;
+    ?>
 </body>
 </html>

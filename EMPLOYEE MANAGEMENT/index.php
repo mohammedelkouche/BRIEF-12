@@ -11,16 +11,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/all.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>     
+    <?php
+        include 'Bootstrap-css.php'
+    ?>
     <title>Document</title>
 </head>
-<body>
+<body >
 
     <?php 
     include 'header.php' ;
-    echo"<div id='Employee-List'>
+    echo"<div class='page-title'>
             <h1>Employee List</h1> 
         </div>" ;
         if ($result->num_rows > 0){
@@ -46,15 +46,16 @@
                         <td>".$row["Department"]."</td>
                         <td>".$row["Salary"]."</td>
                         <td>".$row["Job"]."</td>
-                        <td>".$row["Photo"]."</td>
-                        <td><a href= 'edite.php?edit=".$row['SerialNumber']." ' > EDIT </a>
-                            <a href= 'delet.php?cancel=".$row['SerialNumber']." ' > DELETE </a>"."</td>
+                        <td>"."<img src='image/'>".$row["Photo"]."</td>
+                        <td><a href= 'edite.php?edit=".$row['SerialNumber']." ' class= 'btn btn-success'> <i class='fa-solid fa-user-pen'></i> EDIT </a>
+                            <a href= 'delet.php?cancel=".$row['SerialNumber']." ' class= 'btn btn-danger'> <i class='fa-solid fa-trash-list'></i> DELETE </a>"."</td>
                     </tr>";
             }
             echo "</table>";
         }else{
             echo "0 results";
-            }   
+        } 
+        include 'buttonhome.php' ;
     ?>
 </body>
 </html>
