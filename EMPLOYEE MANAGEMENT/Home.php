@@ -19,7 +19,7 @@
                 <a href="#" class="nav-link h3 my-2">Side Nav</a>
                 <a href="index.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Employee List</a>
                 <a href="insert.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Add Employee</a>
-                <a href="insert.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Search employee</a>
+                <a href="search.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Search employee</a>
             </div> 
         </section>
         <section id="main">

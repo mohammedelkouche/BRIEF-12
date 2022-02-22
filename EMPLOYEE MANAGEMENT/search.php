@@ -1,28 +1,40 @@
- <?php
-    include 'connect.php';
-    // $sql = "SELECT SerialNumber, lastname, FirstName ,DateofBirth, Department,Salary,Job,Photo FROM employee";
-    $sql = "SELECT * FROM employee" ;
-    $result = $conn->query($sql);
-    $conn->close();
+<?php
+    include 'connect.php' ;
+    if (isset($_POST["submit"])){
+    $query = $_GET['search']; 
+	// gets value sent over search form
+    $sql = "SELECT * FROM employee
+			WHERE (`SerialNumber` LIKE '%".$query."%')
+            OR (`Department` LIKE '%".$query."%') 
+            OR (`lastname` LIKE '%".$query."%')";
+    $result = $conn->query($sql) ;
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
         include 'Bootstrap-css.php'
     ?>
     <title>Document</title>
 </head>
-<body >
-
-    <?php 
+<body>
+<?php 
     include 'header.php' ;
     echo"<div class='page-title'>
-            <h1>Employee List</h1> 
+            <h1>Search Employee </h1> 
         </div>" ;
+    echo"<form action='search.php' method='GET'>
+            <div class='col-md-6 col-lg-6 clo-11 mx-auto my-auto search-box'>
+                <div class='input-group form-container'>
+                    <input type='text' name='search' class='form-control search-input' placeholder='Keyword' autofocus='autofocus' >
+                    <input type='submit' name='submit' class='btn btn-primary ' value='Search' >
+                </div>   
+            </div>
+        </form> "  ;
         if ($result->num_rows > 0){
             echo "<table class='table table-bordered table-hover table-dark table-striped '>
                     <tr>

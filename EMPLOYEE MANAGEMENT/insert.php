@@ -18,7 +18,7 @@
             $insertdata = "INSERT INTO employee (SerialNumber,lastname,FirstName,DateofBirth,Department,Salary,Job,Photo ) 
                             VALUES ('$SerialNumber','$lastname','$FirstName','$DateofBirth','$Department','$Salary','$Job','$Photo')" ;
             if($conn->query($insertdata) === TRUE){
-                move_uploaded_file($Photo_tm_name) ;
+                move_uploaded_file($Photo_tm_name,$Photo_tm_folder) ;
                 echo "Record Inserted Succefully" ;
             }else{
                 echo "Unable to Inserdt Data" ;
