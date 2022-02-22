@@ -46,7 +46,7 @@
                         <td>".$row["Department"]."</td>
                         <td>".$row["Salary"]."</td>
                         <td>".$row["Job"]."</td>
-                        <td>"."<img src='image/'>".$row["Photo"]."</td>
+                        <td>"."<img src='image/".$row["Photo"]."' height='100'></td>
                         <td><a href= 'edite.php?edit=".$row['SerialNumber']." ' class= 'btn btn-success'> <i class='fa-solid fa-user-pen'></i> EDIT </a>
                             <a href= 'delet.php?cancel=".$row['SerialNumber']." ' class= 'btn btn-danger'> <i class='fa-solid fa-trash-list'></i> DELETE </a>"."</td>
                     </tr>";
