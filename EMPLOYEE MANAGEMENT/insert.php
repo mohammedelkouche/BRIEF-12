@@ -86,7 +86,7 @@
             <br>
             <span>Photo :</span>
             <br>
-            <input type="file" accept="image/png,image/jpeg,image/jpg," name = "Photo" placeholder = "Photo" >
+            <input type="file" accept="image/png,image/jpeg,image/jpg" name = "Photo" placeholder = "Photo" >
             <br>
             <br>
             <input type="submit" name = "submit" value = "register" >
