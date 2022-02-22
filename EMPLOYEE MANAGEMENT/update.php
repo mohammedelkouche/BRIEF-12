@@ -17,7 +17,7 @@ if(isset($_POST['Update'])){
         DateofBirth = '$DateofBirth' ,
         Department = '$Department' ,
         Salary = '$Salary' ,
-        Job = '$Job' ,
+        Job = '$Job' ,  
         Photo = '$Photo' 
         WHERE SerialNumber = $ID " ;
     $result = $conn->query($query);
