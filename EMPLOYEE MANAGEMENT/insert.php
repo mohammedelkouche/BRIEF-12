@@ -15,14 +15,17 @@
             $Photo = $_FILES['Photo']['name'];
             $Photo_tm_name = $_FILES["Photo"]["tmp_name"];
             $Photo_tm_folder = 'image/'.$Photo;
-            $insertdata = "INSERT INTO employee (SerialNumber,lastname,FirstName,DateofBirth,Department,Salary,Job,Photo ) 
+            $insertdata = "INSERT INTO employee (SerialNumber,lastname,FirstName,DateofBirth,Department,Salary,Job,Photo) 
                             VALUES ('$SerialNumber','$lastname','$FirstName','$DateofBirth','$Department','$Salary','$Job','$Photo')" ;
-            if($conn->query($insertdata) === TRUE){
-                move_uploaded_file($Photo_tm_name,$Photo_tm_folder) ;
-                echo "Record Inserted Succefully" ;
-            }else{
-                echo "Unable to Inserdt Data" ;
-            }
+                     $treeu =  $conn->query($insertdata);
+                    
+                        move_uploaded_file($Photo_tm_name,$Photo_tm_folder) ;
+            // idon't now why its not work
+            // if($conn->query($insertdata) === TRUE){
+            //     echo "Record Inserted Succefully" ;
+            // }else{
+            //     echo "Unable to Inserdt Data" ;
+            // }
         // }
         
 
@@ -54,7 +57,7 @@
         // }
     ?>
     <div id="div-form">
-    <form action="insert.php" method = "POST">
+    <form action="insert.php" enctype="multipart/form-data" method = "POST">
         <fieldset>
             <span>SerialNumber</span>
             <br>

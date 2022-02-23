@@ -24,7 +24,7 @@
                 <h1>Edit Employee</h1> 
             </div>" ;
     ?>
-    <form action="update.php?ID=<?php echo $row['SerialNumber'] ?>" method = "POST">
+    <form action="update.php?ID=<?php echo $row['SerialNumber'] ?>" enctype="multipart/form-data" method = "POST">
         <fieldset>
             <span>SerialNumber</span>
             <br>
