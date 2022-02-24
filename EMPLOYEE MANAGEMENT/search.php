@@ -1,13 +1,16 @@
 <?php
     include 'connect.php' ;
-    if (isset($_POST["submit"])){
+    if (isset($_GET["submit"])){
     $query = $_GET['search']; 
 	// gets value sent over search form
     $sql = "SELECT * FROM employee
 			WHERE (`SerialNumber` LIKE '%".$query."%')
             OR (`Department` LIKE '%".$query."%') 
             OR (`lastname` LIKE '%".$query."%')";
-    $result = $conn->query($sql) ;
+           
+               $result = $conn->query($sql) ;
+            
+    
         }
 ?>
 <!DOCTYPE html>
@@ -35,7 +38,9 @@
                 </div>   
             </div>
         </form> "  ;
-        if ($result->num_rows > 0){
+
+if(isset($_GET["submit"])){ 
+        if ($result->num_rows > 0 ){
             echo "<table class='table table-bordered table-hover table-dark table-striped '>
                     <tr>
                         <th>SerialNumber</th>
@@ -67,7 +72,7 @@
         }else{
             echo "0 results";
         } 
-        include 'buttonhome.php' ;
+        include 'buttonhome.php' ;}
     ?>
 </body>
 </html>
