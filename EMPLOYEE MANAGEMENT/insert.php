@@ -17,10 +17,10 @@
             $Photo_tm_folder = 'image/'.$Photo;
             $insertdata = "INSERT INTO employee (SerialNumber,lastname,FirstName,DateofBirth,Department,Salary,Job,Photo) 
                             VALUES ('$SerialNumber','$lastname','$FirstName','$DateofBirth','$Department','$Salary','$Job','$Photo')" ;
-                     $treeu =  $conn->query($insertdata);
+                        $treeu =  $conn->query($insertdata);
                     
                         move_uploaded_file($Photo_tm_name,$Photo_tm_folder) ;
-            // idon't now why its not work
+            // idon't know why its not work
             // if($conn->query($insertdata) === TRUE){
             //     echo "Record Inserted Succefully" ;
             // }else{
