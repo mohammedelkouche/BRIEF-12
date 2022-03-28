@@ -40,7 +40,7 @@
             <br>
             <span>Date of Birth</span>
             <br>
-            <input type="date" name = "DateofBirth" placeholder = "Date of Birth" valueAsDate="<?php echo $row['DateofBirth'] ?> ">
+            <input type="date" name = "DateofBirth" placeholder = "Date of Birth" value="<?php echo $row['DateofBirth'] ?> ">
             <br>
             <span>Department</span>
             <br>
