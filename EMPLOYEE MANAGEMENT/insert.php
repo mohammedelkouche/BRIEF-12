@@ -73,7 +73,7 @@
             <br>
             <span>Date of Birth</span>
             <br>
-            <input type="date" name = "DateofBirth" placeholder = "Date of Birth">
+            <input type="date" name = "DateofBirth" >
             <br>
             <span>Department</span>
             <br>
